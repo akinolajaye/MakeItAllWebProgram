@@ -25,168 +25,208 @@
       function test(id) {  
 
         $(document).ready(function(){
-          console.log(1)
-          $("#"+id).unbind().click(function() {
-            var output = $("#"+id).val();
+          
+          
+            var output = $("#opt2").val();
             console.log(output);
             
             
             $("#problem_desc").val(output);
+            $("#notes").val("Told caller to go to network settings and click forget network. Then proceed to enter network credentials again ");
 
 
-          });
+            
       });
         
         
         
       }
     </script>
-    
-    <div class="parent-container d-flex  w-75 bg-light ">
-      <div class="container " >
-
-          <div class="row">
-            <div class="col-sm-6 ">
-              
-              Alice:
-            
-            </div>
-          </div> 
 
 
-          <div class="row">
-            <div class="col-sm ">
-              
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">Problem ID:</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-            
-            </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
 
-
-          </div>
-
-          <div class="row">
-            <div class="col-sm ">
-              
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">First and last name</span>
-                </div>
-                <input type="text" aria-label="First name" class="form-control">
-                <input type="text" aria-label="Last name" class="form-control">
-              </div>
-            
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-sm ">
-              
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">Software Type:</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-            
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-sm ">
-              
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">Hardware Type:</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-            
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-sm">
-              
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">Problem Type:</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-            
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-sm">
-
-              <button type="button" class="btn btn-primary">Assign Specialist</button>  
-
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-      <div class="container" >
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
-                <div class="dropdown-menu" >
-                  <button class="dropdown-item" type="button" id="opt1" value="Action" onclick="test(this.id)">Action</button>
-                  <button class="dropdown-item" type="button" id="opt2" value="Another action" onclick="test(this.id)">Another action</button>
-                  <button class="dropdown-item" type="button" id="opt3" onclick="test(this.id)">Something else here</button>
-                  
-                </div>
-              </div>
-              <input type="text" class="form-control" aria-label="Text input with dropdown button" id="problem_desc">
-            </div>
-              
-
-
-            
-          </div>
-
-       
-       
-       
-        
-        </div>
-
-
-
-        <div class="row">
-          <div class="col-sm">
-
- 
-            <textarea class="form-control"  rows="5"></textarea>
-
-          </div>
-
-        </div>
-
-        <div class="row">
-          <div class="col-sm">
-
- 
-            <button type="button" class="btn btn-primary" >Resolve</button>  
-            <button type="button" class="btn btn-primary" >Submit</button>  <!-- change to sumbit type-->
-
-          </div>
-
-        </div>
-      </div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addnewprob">
+        Launch demo modal
+      </button>
 
     </div>
+  </div>
+
+</div>
+<div class="modal fade" id="addnewprob" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl"  >
+    <div class="modal-content">
+      <div class="modal-header bg-warning">
+        <h5 class="modal-title" id="exampleModalLabel">Alice</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+        <div class="parent-container d-flex  w-100 bg-light" id="parent">
+          <div class="container w-50 " id="inputproblem" >
+
+    
+              <div class="row">
+                <div class="col-sm ">
+                  
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Problem ID:</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="57" disabled >
+                  </div>
+                
+                </div>
+    
+    
+              </div>
+    
+              <div class="row">
+                <div class="col-sm ">
+                  
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">First and last name</span>
+                    </div>
+                    <input type="text" aria-label="First name" class="form-control">
+                    <input type="text" aria-label="Last name" class="form-control">
+                  </div>
+                
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm ">
+                  
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Caller ID:</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                
+                </div>
+              </div>
+    
+              <div class="row">
+                <div class="col-sm ">
+                  
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Software Type:</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                
+                </div>
+              </div>
+    
+              <div class="row">
+                <div class="col-sm ">
+                  
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Hardware Type:</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                
+                </div>
+              </div>
+    
+              <div class="row">
+                <div class="col-sm">
+                  
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1">Problem Type:</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                
+                </div>
+              </div>
+    
+              <div class="row">
+                <div class="col-sm">
+    
+                  <button type="button" class="btn btn-primary">Assign Specialist</button>  
+    
+    
+                </div>
+    
+              </div>
+    
+            </div>
+    
+    
+          <div class="container" id="notes_container" >
+            <div class="row ">
+              <div class="col-sm ">
+                <div class="input-group mb-3 ">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Problem Description</button>
+                    <div class="dropdown-menu " >
+                      <!--<button class="dropdown-item" type="button" id="opt1" value="Printer not showing" onclick="test(this.id)">Printer not showing</button>-->
+                      <button class="dropdown-item" type="button" id="opt2" value="Laptop not connecting to Wi-Fi" onclick="test(this.id)">Laptop not connecting to Wi-Fi</button>
+                      <!--<button class="dropdown-item" type="button" id="opt3" value="VPN log on not working" onclick="test(this.id)">VPN log on not working</button>-->
+                      
+                    </div>
+                  </div>
+                
+                  <input type="text" class="form-control "  aria-label="Text input with dropdown button" id="problem_desc" aria-describedby="default">
+                </div>
+              </div>   
+            </div>
+    
+
+            <div class="row">
+              <div class="col-sm">
+    
+     
+                <textarea class="form-control" id="notes"  rows="5"></textarea>
+    
+              </div>
+    
+            </div>
+    
+            <div class="row">
+              <div class="col-sm d-flex m-3">
+    
+     
+                <button type="button" class="btn btn-primary m-3 " >Resolve</button>  
+                <button type="button" class="btn btn-primary m-3" >Submit</button>  <!-- change to sumbit type-->
+
+                <div class="custom-control custom-checkbox m-4">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Add to previous fix</label>
+                </div>
+
+    
+              </div>
+    
+            </div>
+          </div>
+    
+        </div>
+        </div>
+    
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
 
   </body>
 </html>
