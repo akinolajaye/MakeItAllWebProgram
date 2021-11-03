@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Make-it-All: Problem Logger</title>
+    <title>Problem Logger</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,30 +33,57 @@
         })
       }
 
-      function fill(destination, value) {
+      function getDate() {
+
+        // author: Jordan
+        // gets current date with custom format: MMM D YYYY, HH:MM
+
+        $(document).ready(function() {
+
+          const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+          var year = new Date().getFullYear().toString();
+          var month = months[new Date().getMonth()];
+          var day = new Date().getDate().toString();
+          var hour = new Date().getHours().toString();
+
+          if (hour < 10) // format time
+            hour = '0' + hour;
+          if (mins < 10) 
+            mins = '0' + mins;
+
+          var mins = new Date().getMinutes().toString();
+          var today = month.substring(0, 3) + " " + day + " " + year + ", " + hour + ":" + mins;
+          $("#call-date").val(today);
+        })
+
+      }
+
+      function fill(destination, value) { 
+        
+        // author: Jordan
+        // fills text field with value
 
         $(document).ready(function() {
           $(destination).val(value);
         })
       }
 
-      
+      getDate();
+
     </script>
 
 
-<div class="container">
+<div class="container"> <!-- container for button -->
   <div class="row">
     <div class="col-sm">
-
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addnewprob">
         Launch demo modal
       </button>
-
     </div>
   </div>
-
 </div>
-<div class="modal fade" id="addnewprob" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="addnewprob" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> <!-- modal container -->
   <div class="modal-dialog modal-xl"  >
     <div class="modal-content">
       <div class="modal-header bg-warning">
@@ -71,20 +98,18 @@
           <div class="container w-50 " id="inputproblem" >
 
     
-              <div class="row">
+              <div class="row"> <!-- case number field -->
                 <div class="col-sm ">
-                  
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1">Problem ID</span>
+                      <span class="input-group-text" id="basic-addon1">Case Number</span>
                     </div>
                     <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="57" disabled >
                   </div>
-                
                 </div>
               </div>
 
-              <div class="row">
+              <div class="row"> <!-- case status field -->
                 <div class="col-sm ">
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -95,20 +120,19 @@
                 </div>
               </div>
 
-              <div class="row">
+              <div class="row"> <!-- call date field -->
                 <div class="col-sm ">
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon1">Call Date</span>
                     </div>
-                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="Nov 2, 16:04" disabled >
+                    <input id="call-date" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="" >
                   </div>
                 </div>
               </div>
     
-              <div class="row">
+              <div class="row"> <!-- full name field -->
                 <div class="col-sm ">
-                  
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text">Full Name</span>
@@ -116,24 +140,21 @@
                     <input type="text" aria-label="First name" class="form-control">
                     <input type="text" aria-label="Last name" class="form-control">
                   </div>
-                
                 </div>
               </div>
 
-              <div class="row">
+              <div class="row"> <!-- extension no. field -->
                 <div class="col-sm ">
-                  
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1">Caller ID</span>
+                      <span class="input-group-text" id="basic-addon1">Extension Number</span>
                     </div>
                     <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
                   </div>
-                
                 </div>
               </div>
 
-              <div class="input-group mb-3 ">
+              <div class="input-group mb-3 "> <!-- software type field -->
                 <div class="input-group-prepend">
                   <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Software Type</button>
                   <div class="dropdown-menu " >
@@ -145,7 +166,7 @@
                 <input type="text" class="form-control " value="" aria-label="Text input with dropdown button" id="software-type" aria-describedby="default">
               </div>
     
-              <div class="input-group mb-3 ">
+              <div class="input-group mb-3 "> <!-- hardware type field -->
                 <div class="input-group-prepend">
                   <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hardware Type</button>
                   <div class="dropdown-menu " >
@@ -157,27 +178,22 @@
                 <input type="text" class="form-control " value="" aria-label="Text input with dropdown button" id="hardware-type" aria-describedby="default">
               </div>
     
-              <div class="row">
-                <div class="col-sm">
-                  
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1">Problem Type</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+              <div class="input-group mb-3 "> <!-- problem type field -->
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Problem Type</button>
+                  <div class="dropdown-menu " >
+                    <button class="dropdown-item" type="button" value="Software" onclick="fill('#problem-type',this.value)">Software</button>                    
+                    <button class="dropdown-item" type="button" value="Hardware" onclick="fill('#problem-type',this.value)">Hardware</button>               
+                    <button class="dropdown-item" type="button" value="Network" onclick="fill('#problem-type',this.value)">Network</button>                  
                   </div>
-                
                 </div>
+                <input type="text" class="form-control " value="" aria-label="Text input with dropdown button" id="problem-type" aria-describedby="default">
               </div>
     
               <div class="row">
                 <div class="col-sm">
-    
                   <button type="button" class="btn btn-primary">Assign Specialist</button>  
-    
-    
                 </div>
-    
               </div>
     
             </div>
@@ -222,7 +238,7 @@
 
                 <div class="custom-control custom-checkbox m-4">
                   <input type="checkbox" class="custom-control-input" id="customCheck1">
-                  <label class="custom-control-label" for="customCheck1">Add to previous fix</label>
+                  <label class="custom-control-label" for="customCheck1">Add to previous fixes</label>
                 </div>
 
     
