@@ -45,13 +45,13 @@
           var month = months[new Date().getMonth()];
           var day = new Date().getDate().toString();
           var hour = new Date().getHours().toString();
+          var mins = new Date().getMinutes().toString();
 
           if (hour < 10) // format time
             hour = '0' + hour;
           if (mins < 10) 
             mins = '0' + mins;
 
-          var mins = new Date().getMinutes().toString();
           var today = month.substring(0, 3) + " " + day + " " + year + ", " + hour + ":" + mins;
           $("#call-date").val(today);
         })
@@ -126,7 +126,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon1">Call Date</span>
                     </div>
-                    <input id="call-date" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="" >
+                    <input id="call-date" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" value="" disabled>
                   </div>
                 </div>
               </div>
