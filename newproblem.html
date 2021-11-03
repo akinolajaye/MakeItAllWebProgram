@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Make-it-All: Problem Logger</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,8 +9,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
      crossorigin="anonymous">
-    
-
   </head>
   <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
@@ -22,25 +20,27 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script>
-      function test(id) {  
 
-        $(document).ready(function(){
-          
-          
-            var output = $("#opt2").val();
-            console.log(output);
-            
-            
-            $("#problem_desc").val(output);
-            $("#notes").val("Told caller to go to network settings and click forget network. Then proceed to enter network credentials again ");
+      function test(id) {
+        $(document).ready(function() {
 
-
+          var output = $("#opt2").val();
+          console.log(output);
             
-      });
-        
-        
-        
+          $("#problem_desc").val(output);
+          $("#notes").val("Told caller to go to network settings and click forget network. Then proceed to enter network credentials again ");
+
+        })
       }
+
+      function fill(destination, value) {
+
+        $(document).ready(function() {
+          $(destination).val(value);
+        })
+      }
+
+      
     </script>
 
 
@@ -132,30 +132,29 @@
                 
                 </div>
               </div>
-    
-              <div class="row">
-                <div class="col-sm ">
-                  
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1">Software Type</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+
+              <div class="input-group mb-3 ">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Software Type</button>
+                  <div class="dropdown-menu " >
+                    <button class="dropdown-item" type="button" value="Example 1" onclick="fill('#software-type',this.value)">Example 1</button>                    
+                    <button class="dropdown-item" type="button" value="Example 2" onclick="fill('#software-type',this.value)">Example 2</button>               
+                    <button class="dropdown-item" type="button" value="Example 3" onclick="fill('#software-type',this.value)">Example 3</button>                    
+                    <button class="dropdown-item" type="button" value="Example 4" onclick="fill('#software-type',this.value)">Example 4</button>                    
+                    <button class="dropdown-item" type="button" value="Example 5" onclick="fill('#software-type',this.value)">Example 5</button>                    
                   </div>
-                
                 </div>
+                <input type="text" class="form-control " value="" aria-label="Text input with dropdown button" id="software-type" aria-describedby="default">
               </div>
     
               <div class="row">
                 <div class="col-sm ">
-                  
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon1">Hardware Type</span>
                     </div>
                     <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
                   </div>
-                
                 </div>
               </div>
     
